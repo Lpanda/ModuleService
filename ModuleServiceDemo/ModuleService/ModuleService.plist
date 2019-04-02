@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ModuleA</key>
+	<dict>
+		<key>A模块首页</key>
+		<dict>
+			<key>url</key>
+			<string>ModuleService://page/moduleA/main</string>
+			<key>desc</key>
+			<string>A模块首页</string>
+			<key>class</key>
+			<string>ModuleAService</string>
+		</dict>
+	</dict>
+	<key>ModuleB</key>
+	<dict>
+		<key>B模块首页</key>
+		<dict>
+			<key>url</key>
+			<string>ModuleService://page/moduleB/main</string>
+			<key>desc</key>
+			<string>B模块首页</string>
+			<key>class</key>
+			<string>ModuleBService</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
