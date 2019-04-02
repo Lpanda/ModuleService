@@ -32,6 +32,8 @@ static  NSString *const CLASS = @"class";
     return service;
 }
 
+// 读取plist中配置好的路由模块
+// 将scheme的host做为key，service类名做为value储存
 + (void)initialize {
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"ModuleService" ofType:@".plist"];
     NSDictionary *configData = [NSDictionary dictionaryWithContentsOfFile:configPath];
@@ -73,6 +75,7 @@ static  NSString *const CLASS = @"class";
     [service setValue:moduleServices forKey:MODULES];
 }
 
+// 通过host来取到匹配的service类以及对应的解析方法
 - (void)handleOpenUrl:(NSString *)url {
     if (url.length <= 0) {
         return;
@@ -92,6 +95,7 @@ static  NSString *const CLASS = @"class";
         return;
     }
     
+    // 此处使用的IMP来进行直接调用，可以避免警告以及速度要优于msg_send
     Method method = class_getClassMethod(moduleClass, selector);
     IMP imp = method_getImplementation(method);
     NSArray *supportUrls = imp(moduleClass, selector);

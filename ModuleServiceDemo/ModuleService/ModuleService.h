@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedIntance;
 
+// url为应用自身定义的urlScheme或配置好的跳转链接
+// url和service解析方法名同"^"符号来链接，方便解析
 - (void)handleOpenUrl:(NSString *)url;
 
 @end
